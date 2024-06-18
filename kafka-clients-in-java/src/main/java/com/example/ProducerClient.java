@@ -17,17 +17,20 @@ public class ProducerClient {
         Properties props = new Properties();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092,localhost:9093,localhost:9094");
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
-        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
-        //props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, "com.example.CustomPartitioner");
+        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
+                "org.apache.kafka.common.serialization.StringSerializer");
+        // props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG,
+        // "com.example.CustomPartitioner");
 
-        KafkaProducer producer = new KafkaProducer(props);
+        KafkaProducer<String, String> producer = new KafkaProducer<>(props);
 
         String topic = "topic1";
-        for(int i = 0; i < 32; i++) {
-            List<String> languages=List.of("en","es","fr","de","it","pt","ru","zh","ja","ko");
-//            String key = languages.get(i % languages.size());
+        for (int i = 0; i < 32; i++) {
+            // List<String> languages = List.of("en", "es", "fr", "de", "it", "pt", "ru",
+            // "zh", "ja", "ko");
+            // String key = languages.get(i % languages.size());
             String value = "Hey Kafka!".repeat(100); // 1kb message
-            ProducerRecord record = new ProducerRecord(topic,value);
+            ProducerRecord<String, String> record = new ProducerRecord<>(topic, value);
             producer.send(record, (recordMetadata, exception) -> {
                 if (exception == null) {
                     logger.info("Received new metadata \nTopic: {}\nKey: {}\nPartition: {}\nOffset: {}\nTimestamp: {}",
