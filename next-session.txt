@@ -1,0 +1,12 @@
+
+
+- deep into consumer-group
+- deep into topics
+- deep into brokers
+
+-------------------------------------------
+
+- kafka connectors
+- kafka streams
+
+-------------------------------------------
