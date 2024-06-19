@@ -9,6 +9,29 @@ import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.kafka.common.Cluster;
+
+import java.util.Map;
+
+class CustomPartitioner implements org.apache.kafka.clients.producer.Partitioner {
+
+    @Override
+    public int partition(String topic, Object key, byte[] keyBytes, Object value, byte[] valueBytes, Cluster cluster) {
+        // algorithm to determine partition
+        return key.toString().hashCode() % cluster.partitionCountForTopic(topic);
+    }
+
+    @Override
+    public void close() {
+
+    }
+
+    @Override
+    public void configure(Map<String, ?> configs) {
+
+    }
+}
+
 public class ProducerClient {
 
     private static final Logger logger = org.slf4j.LoggerFactory.getLogger(ProducerClient.class);
