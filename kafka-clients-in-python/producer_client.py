@@ -14,7 +14,8 @@ bootstrap_servers = ["localhost:9092", "localhost:9093", "localhost:9094"]
 producer = KafkaProducer(
     bootstrap_servers=bootstrap_servers,
     key_serializer=lambda k: k.encode('utf-8'),
-    value_serializer=lambda v: v.encode('utf-8')
+    value_serializer=lambda v: v.encode('utf-8'),
+    acks="all",
 )
 
 topic = "topic1"
