@@ -1,25 +1,20 @@
 package com.example;
 
-import java.sql.Time;
 import java.time.Duration;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.clients.consumer.OffsetAndMetadata;
-import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.errors.WakeupException;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ConsumerClient {
-    private static final Logger logger = LoggerFactory.getLogger(ConsumerClient.class);
+public class ConsumerClient_1 {
+    private static final Logger logger = LoggerFactory.getLogger(ConsumerClient_1.class);
 
     public static void main(String[] args) {
 

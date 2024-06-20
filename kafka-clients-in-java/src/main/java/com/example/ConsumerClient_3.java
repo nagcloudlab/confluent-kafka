@@ -25,7 +25,7 @@ public class ConsumerClient_3 {
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092,localhost:9093");
         // Unique string that identifies the consumer group this consumer belongs to
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "consumer-group-2");
-        props.put(ConsumerConfig.GROUP_INSTANCE_ID_CONFIG, "consumer-instance-1"); // unique id for the consumer instance in the group ( static membership)
+        props.put(ConsumerConfig.GROUP_INSTANCE_ID_CONFIG, "consumer-instance-3"); // unique id for the consumer instance in the group ( static membership)
 
         // Deserializer class for key that implements the Deserializer interface
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
