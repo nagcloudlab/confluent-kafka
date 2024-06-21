@@ -20,7 +20,8 @@ consumer = KafkaConsumer(
     group_id=group_id,
     key_deserializer=lambda k: k.decode('utf-8'),
     value_deserializer=lambda v: v.decode('utf-8'),
-    auto_offset_reset='earliest'
+    auto_offset_reset='earliest',
+    auto_commit_interval_ms=1000,
 )
 
 # Thread for handling graceful shutdown
