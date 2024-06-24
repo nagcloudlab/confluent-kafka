@@ -1,0 +1,19 @@
+{
+    "name": "snowflake-sink-connector",
+    "config": {
+        "connector.class": "com.snowflake.kafka.connector.SnowflakeSinkConnector",
+        "tasks.max": "1",
+        "topics": "sqlserver-Employees",
+        "snowflake.url.name": "https://fxnpnid-kb56611.snowflakecomputing.com",
+        "snowflake.user.name": "nagtraininglab",
+        "snowflake.private.key": "<YOUR_SNOWFLAKE_PRIVATE_KEY>",
+        "snowflake.private.key.passphrase": "<YOUR_SNOWFLAKE_PRIVATE_KEY_PASSPHRASE>",
+        "snowflake.database.name": "my_database",
+        "snowflake.schema.name": "my_schema",
+        "snowflake.role.name": "<YOUR_SNOWFLAKE_ROLE>",
+        "snowflake.stage.name": "<YOUR_SNOWFLAKE_STAGE>",
+        "buffer.count.records": "10000",
+        "buffer.flush.time": "60",
+        "buffer.size.bytes": "5000000"
+    }
+}

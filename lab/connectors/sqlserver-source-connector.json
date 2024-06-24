@@ -1,0 +1,16 @@
+{
+    "name": "sqlserver-source-connector",
+    "config": {
+        "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+        "tasks.max": "1",
+        "driver.class": "com.microsoft.sqlserver.jdbc.SQLServerDriver",
+        "connection.url": "jdbc:sqlserver://localhost:1433;databaseName=TestDB;encrypt=false",
+        "connection.user": "sa",
+        "connection.password": "YourStrong@Passw0rd",
+        "mode": "incrementing",
+        "incrementing.column.name": "ID",
+        "topic.prefix": "sqlserver-",
+        "poll.interval.ms": "1000",
+        "table.whitelist": "Employees"
+    }
+}

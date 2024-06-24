@@ -20,14 +20,14 @@ curl -s http://localhost:8083/connectors | jq
 create/deploy a file source connector
 
 ```bash
-curl -X POST -H "Content-Type: application/json" --data @/home/nag/confluent-kafka/lab/file-source-connector.json http://localhost:8083/connectors | jq
+curl -X POST -H "Content-Type: application/json" --data @/home/nag/confluent-kafka/lab/connectors/file-source-connector.json http://localhost:8083/connectors | jq
 ```
 
 
 create/deploy a file sink connector
 
 ```bash
-curl -X POST -H "Content-Type: application/json" --data @/home/nag/confluent-kafka/lab/file-sink-connector.json http://localhost:8083/connectors | jq
+curl -X POST -H "Content-Type: application/json" --data @/home/nag/confluent-kafka/lab/connectors/file-sink-connector.json http://localhost:8083/connectors | jq
 ```
 
 get connector status
@@ -68,4 +68,17 @@ curl -X POST http://localhost:8083/connectors/file-source-connector/restart
 stop connector
 ```bash
 curl -X DELETE http://localhost:8083/connectors/file-source-connector
+```
+
+
+
+deploy sqlserver source connector
+```bash
+curl -X POST -H "Content-Type: application/json" --data @/home/nag/confluent-kafka/lab/connectors/sqlserver-source-connector.json http://localhost:8083/connectors | jq
+```
+
+
+deploy snowflake sink connector
+```bash
+curl -X POST -H "Content-Type: application/json" --data @/home/nag/confluent-kafka/lab/connectors/snowflake-sink-connector.json http://localhost:8083/connectors | jq
 ```
