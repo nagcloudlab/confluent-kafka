@@ -70,15 +70,22 @@ stop connector
 curl -X DELETE http://localhost:8083/connectors/file-source-connector
 ```
 
+<!-- ----------------------------------------------------------------------------- -->
 
-
-deploy sqlserver source connector
+deploy sqlserver-source connector
 ```bash
 curl -X POST -H "Content-Type: application/json" --data @/home/nag/confluent-kafka/lab/connectors/sqlserver-source-connector.json http://localhost:8083/connectors | jq
 ```
 
-
-deploy snowflake sink connector
+Delete sqlserver-source connector
 ```bash
-curl -X POST -H "Content-Type: application/json" --data @/home/nag/confluent-kafka/lab/connectors/snowflake-sink-connector.json http://localhost:8083/connectors | jq
+curl -X DELETE http://localhost:8083/connectors/sqlserver-source-connector
 ```
+
+
+update sqlserver-source connector
+```bash
+curl -X PUT -H "Content-Type: application/json" --data @/home/nag/confluent-kafka/lab/connectors/sqlserver-source-connector.json http://localhost:8083/connectors/sqlserver-source-connector/config | jq
+```
+
+

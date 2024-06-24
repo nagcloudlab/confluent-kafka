@@ -61,19 +61,14 @@ public class ProducerClient2 {
 
         KafkaProducer<String, String> producer = new KafkaProducer<>(props);
 
-        String topic = "topic1";
+        String topic = "numbers";
         for (int i = 0; i < Integer.MAX_VALUE; i++) {
-            List<String> languages = List.of("en", "es", "fr", "de", "it", "pt", "ru", "zh", "ja", "ko", "ar", "hi",
-                    "bn", "pa", "te", "mr", "ta", "ur", "gu", "kn", "ml", "or", "si", "ne", "sd", "sa", "as", "bh", "ks",
-                    "kok", "sd", "ur", "gu", "kn", "ml", "or", "si", "ne", "sd", "sa", "as", "bh", "ks", "kok", "sd");
-            String key = languages.get(i % languages.size());
-            String value = "Hey Kafka!".repeat(100); // 1kb message
-            ProducerRecord<String, String> record = new ProducerRecord<>(topic, key, value);
+            ProducerRecord<String, String> record = new ProducerRecord<>(topic, String.valueOf(i));
             producer.send(record, (recordMetadata, exception) -> {
                 if (exception == null) {
                     logger.info("Received new metadata \nTopic: {}\nKey: {}\nPartition: {}\nOffset: {}\nTimestamp: {}",
                             recordMetadata.topic(),
-                            key,
+                            null,
                             recordMetadata.partition(),
                             recordMetadata.offset(),
                             recordMetadata.timestamp());

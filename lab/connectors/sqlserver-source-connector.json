@@ -11,6 +11,6 @@
         "incrementing.column.name": "ID",
         "topic.prefix": "sqlserver-",
         "poll.interval.ms": "1000",
-        "table.whitelist": "Employees"
+        "table.whitelist": "Employees,table1,table2"
     }
 }
