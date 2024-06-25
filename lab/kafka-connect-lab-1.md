@@ -1,16 +1,5 @@
 
 
-
-start worker-1 in distributed mode
-```bash
-confluent-7.6.1/bin/connect-distributed confluent-7.6.1/etc/kafka/connect-distributed-worker-1.properties
-```
-
-start worker-2 in distributed mode
-```bash
-confluent-7.6.1/bin/connect-distributed confluent-7.6.1/etc/kafka/connect-distributed-worker-2.properties
-```
-
 list all connectors
 ```bash
 curl -s http://localhost:8083/connectors | jq
@@ -69,23 +58,3 @@ stop connector
 ```bash
 curl -X DELETE http://localhost:8083/connectors/file-source-connector
 ```
-
-<!-- ----------------------------------------------------------------------------- -->
-
-deploy sqlserver-source connector
-```bash
-curl -X POST -H "Content-Type: application/json" --data @/home/nag/confluent-kafka/lab/connectors/sqlserver-source-connector.json http://localhost:8083/connectors | jq
-```
-
-Delete sqlserver-source connector
-```bash
-curl -X DELETE http://localhost:8083/connectors/sqlserver-source-connector
-```
-
-
-update sqlserver-source connector
-```bash
-curl -X PUT -H "Content-Type: application/json" --data @/home/nag/confluent-kafka/lab/connectors/sqlserver-source-connector.json http://localhost:8083/connectors/sqlserver-source-connector/config | jq
-```
-
-

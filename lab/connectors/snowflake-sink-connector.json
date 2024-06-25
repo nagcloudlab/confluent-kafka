@@ -3,15 +3,12 @@
     "config": {
         "connector.class": "com.snowflake.kafka.connector.SnowflakeSinkConnector",
         "tasks.max": "1",
-        "topics": "sqlserver-Employees",
+        "topics": "testdb.TestDB.dbo.Employees",
         "snowflake.url.name": "https://fxnpnid-kb56611.snowflakecomputing.com",
         "snowflake.user.name": "nagtraininglab",
-        "snowflake.private.key": "<YOUR_SNOWFLAKE_PRIVATE_KEY>",
-        "snowflake.private.key.passphrase": "<YOUR_SNOWFLAKE_PRIVATE_KEY_PASSPHRASE>",
+        "snowflake.private.key": "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDN3T+hZovNvsezv7ZwEeStxIxYccCCuAV7BfFS1yzhVIezfRBmI6wfCS31Q6t1RZrqWubDn+Y6uxOk5LC/iMDGfZjPy0bksF/eOXKgddwLyOrrffiUeE4xkM2x0u5pPdZNeTZKhFIrEyQBAW1PmZswF0QH2GrRil/u9bAB2XDDoRQu3Fs8LsKsI0YLgvuVLr5/3xCSt5waJrHu95tgWfXFknFyMSHjev+QbpzqrshBxjw2vuABITB5ku/LcSIUzuR1WdgcI9t0+D2IRr7QQpjA6W0E+2fLRNxY8234oCNXg2EfOd4b7i+xDXhYeeddYhJEpA9qYcA8IKqhDSa03uSlAgMBAAECggEABngi9UP/NbZ+mRf3uDrfuFQ6YtckSRdWWMDdjhBkASrCXvIZr1QEpy8HKjN3smY/EYlMwi4GsqbJXb+wDDzUbghpYnJNZodiY93jS8aYZShptX/ObYAAWQ9nX2S1CEqgruuVuK7C1Ea0NXHhiQRXO6IniaWT6cTS8fP3lX9LS2J4iC1cEns/KX8uGhhtIvVC+eFxO9Eg6hkgkpG05dYhxKYWoC9+UMaSFEkpikLD7/LBkNtkzV1o6iwC5F1/Kfwdy8cD1yMu9n/+X+Ym5xDlGvOzlerjpPZ0JuNHluF+gH+pF2NqhIS79423wipT+JMCqxm9clR8Qxu1b7TVea8OiwKBgQDydnmJcz0P0NKv8VW0X49oq5vWtKTTLxTbxsT4chATAG5d2+mEVyDX0YNi1DYrazuBj4sDT6kT0d5bjyWIYpakV+PmygIsXnuZtQvnDQeyuqw7vPc8XOVvkpJwI+tCeGD97j4lJHfoN//Xle5vG2vnD97pn449ho/5D/Y5xlCL7wKBgQDZW6uROtPJQ1Ajlfpo6ODpqzDglh6gfe1lFHYTC76XqCJdQ5qmJ171e8QIAO3OCPwHVVrPnAAwGSPiMDCPoUehBY5adh0yU/Wp3fqKi0HWkVtkqleheWxmdIjVSdnPiEoHU3nml/d+MS8Gw6ccKXn1/bc4TfkpopzeowSBmElUqwKBgQCsClC2rOQ44q18Vju/3sZ9OLc9I7SIfLHKOEHvH9A0C2xEgRQy6TfOq0UUzQsax93TUq0Kzm1kONgUE4BIQ9wsBIkba18baHc/W210ppQ9x6MKSE0NscTC5DewBmyaH5yC0Zea90N1rLaGnEYw5D4uF97N2n8tPNvPl/nYiNUCVQKBgQCikKVpIY504Rt3Ah0fic1t9tO/pYeSkZyUFRGafRY3Z1EMYBuyWY/0GnUrZ0Z06tNUyMn6rLqXPrZP3ar0QbPJAtbNYbnEgncibRuNs0myqVSpnZ2c76vblR0iKPH2/gAgKpbpmI9Kmo6JiJvbvEmzaec2/Vp1gWHCQjqEktmFsQKBgHi0U9SRo4SYyrcpKldtR+8kRoZG5Mps8NiBn3i+uyeLvZJa/cx1CLeOCxAcPTFDcnevflzlFXBLtVqE4uvshos9WCaxDgzefdRnfBxMIqq21U1i0twOg+AKmAZNPN89o5JZ8oEJaMfJRskh5WXrlDJnm1u/nDTorDk0v6DQfBjf",
         "snowflake.database.name": "my_database",
-        "snowflake.schema.name": "my_schema",
-        "snowflake.role.name": "<YOUR_SNOWFLAKE_ROLE>",
-        "snowflake.stage.name": "<YOUR_SNOWFLAKE_STAGE>",
+        "snowflake.schema.name": "public",
         "buffer.count.records": "10000",
         "buffer.flush.time": "60",
         "buffer.size.bytes": "5000000"
