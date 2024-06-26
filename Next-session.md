@@ -1,5 +1,13 @@
 
 
-- ksqldb - deep-dive
+-------------------------
 - schema-registry
+- rest-proxy
+-------------------------
+- monitoring
+-------------------------
+- monitoring
+- best-practices
+-------------------------
+
 

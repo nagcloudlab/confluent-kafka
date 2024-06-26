@@ -5,3 +5,4 @@ kafka:
       kafkaConnect:
         - name: worker-1
           address: http://localhost:8083
+      ksqldbServer: http://localhost:8088
