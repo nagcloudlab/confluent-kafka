@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+
+<body>
+
+
+    <button class="veg">Veg</button>
+    <button class="non-veg">Non-Veg</button>
+
+    <script>
+
+        document.querySelector('.veg').addEventListener('click', function () {
+
+            /*
+                curl -X POST -H "Content-Type: application/vnd.kafka.json.v2+json" \
+        --data '{"records":[{"value":{"user_action":"clicked_button"}}]}' \
+        http://localhost:8082/topics/user-actions
+                */
+
+            fetch('http://localhost:8082/topics/user-actions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/vnd.kafka.json.v2+json'
+                },
+                body: JSON.stringify({
+                    records: [{
+                        key: 'nag',
+                        value: {
+                            user_action: 'clicked_veg_button'
+                        }
+                    }]
+                })
+            }).then(response => {
+                console.log(response)
+            }).catch(error => {
+                console.error(error)
+            })
+
+        })
+
+        document.querySelector('.non-veg').addEventListener('click', function () {
+
+            fetch('http://localhost:8082/topics/user-actions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/vnd.kafka.json.v2+json'
+                },
+                body: JSON.stringify({
+                    records: [{
+                        key: 'nag',
+                        value: {
+                            user_action: 'clicked_non_veg_button'
+                        }
+                    }]
+                })
+            }).then(response => {
+                console.log(response)
+            }).catch(error => {
+                console.error(error)
+            })
+
+        })
+
+    </script>
+
+</body>
+
+</html>
