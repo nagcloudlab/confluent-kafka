@@ -1,9 +1,6 @@
 
 
--------------------------
-- schema-registry
-- rest-proxy
-- kafka-connenct-single-message-transformation
+# Next Session
 -------------------------
 - security
 -------------------------
