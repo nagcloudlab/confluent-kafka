@@ -3,8 +3,9 @@
 -------------------------
 - schema-registry
 - rest-proxy
+- kafka-connenct-single-message-transformation
 -------------------------
-- monitoring
+- security
 -------------------------
 - monitoring
 - best-practices
