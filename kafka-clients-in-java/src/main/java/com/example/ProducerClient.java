@@ -22,7 +22,7 @@ public class ProducerClient {
         // Client ID
         props.put(ProducerConfig.CLIENT_ID_CONFIG, "producer-client-1");
         // List of Kafka brokers to connect to
-        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092,localhost:9093");
+        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         // Serializer class for key
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         // Serializer class for value
@@ -60,9 +60,25 @@ public class ProducerClient {
         // Interceptor classes
         //props.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, ProducerClientInterceptor.class.getName());
 
+        // security configuration
+//        props.put("security.protocol", "SSl");
+//        props.put("ssl.truststore.location", "/home/nag/confluent-kafka/ssl/kafka.client.truststore.jks");
+//        props.put("ssl.truststore.password", "changeme");
+//
+//        props.put("ssl.keystore.location", "/home/nag/confluent-kafka/ssl/kafka.client.keystore.jks");
+//        props.put("ssl.keystore.password", "changeme");
+
+
+        // SASL_PLAINTEXT
+        props.put("security.protocol", "SASL_PLAINTEXT");
+        props.put("sasl.mechanism", "PLAIN");
+        props.put("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"alice\" password=\"alice-secret\";");
+
+
+
         KafkaProducer<String, String> producer = new KafkaProducer<>(props);
 
-        String topic = "topic1";
+        String topic = "topic2";
         for (int i = 0; i < Integer.MAX_VALUE; i++) {
             List<String> languages = List.of("en", "es", "fr", "de", "it", "pt", "ru", "zh", "ja", "ko", "ar", "hi",
                     "bn", "pa", "te", "mr", "ta", "ur", "gu", "kn", "ml", "or", "si", "ne", "sd", "sa", "as", "bh", "ks",
