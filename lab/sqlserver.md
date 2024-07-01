@@ -29,6 +29,11 @@ EXEC sys.sp_cdc_enable_table
 GO
 ```
 
+# delete all data
+```sql
+DELETE FROM dbo.Employees;
+GO
+```
 
 
 # insert data
@@ -36,6 +41,13 @@ GO
 INSERT INTO dbo.Employees (ID, Name, Position) VALUES (1, 'John Doe', 'Senior Software Engineer');
 INSERT INTO dbo.Employees (ID, Name, Position) VALUES (2, 'Jane Doe', 'Database Administrator');
 INSERT INTO dbo.Employees (ID, Name, Position) VALUES (3, 'Alice Doe', 'Software Engineer');
+INSERT INTO dbo.Employees (ID, Name, Position) VALUES (4, 'Bob Doe', 'Software Engineer');
+INSERT INTO dbo.Employees (ID, Name, Position) VALUES (5, 'Charlie Doe', 'Software Engineer');
+INSERT INTO dbo.Employees (ID, Name, Position) VALUES (6, 'David Doe', 'Software Engineer');
+INSERT INTO dbo.Employees (ID, Name, Position) VALUES (7, 'Eve Doe', 'Software Engineer');
+INSERT INTO dbo.Employees (ID, Name, Position) VALUES (8, 'Frank Doe', 'Software Engineer');
+INSERT INTO dbo.Employees (ID, Name, Position) VALUES (9, 'Grace Doe', 'Software Engineer');
+INSERT INTO dbo.Employees (ID, Name, Position) VALUES (10, 'Hank Doe', 'Software Engineer');
 GO
 ```
 
